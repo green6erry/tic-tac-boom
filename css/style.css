@@ -1,0 +1,73 @@
+body, table {
+	text-align: center;
+	margin:auto;
+	padding: 0;
+	/*outline: 1px green dotted;*/
+}
+
+.board {
+	background-color: darkblue;
+}
+
+.board tr {
+	background-color: cornflowerblue;
+	display: table-row;
+	padding: 0;
+	/*width: 3em;
+	height: 3em;*/
+}
+
+.board td {
+	width: 5em;
+	height: 5em;
+	cursor: pointer;
+
+}
+
+.ex{
+	background: #fff url(../images/ex.png);
+	background-size: contain;
+}
+
+.oh {
+	background: #111 url(../images/oh.png);
+	background-size: contain;
+
+}
+
+#side-ex, #side-oh {
+	padding: 3%;
+
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+/*board cell borders*/
+	.top>*{
+		border-bottom: 1px solid black;
+	}
+
+	.center>*{
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+	}
+
+	.bottom>*{
+		border-top: 1px solid black;
+	}
+
+	.left {
+		border-right: 1px solid black;
+	}
+
+	.middle {
+		border-right: 1px solid black;
+		border-left: 1px solid black;
+	}
+
+	.right {
+		border-left: 1px solid black;
+	}
+
