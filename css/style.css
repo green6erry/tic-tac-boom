@@ -1,16 +1,23 @@
 body, table {
 	text-align: center;
 	margin:auto;
-	padding: 0;
+	padding: 0px;
+	outline: 0px;
+	border: 0px;
+	border-spacing: 0px;
 	/*outline: 1px green dotted;*/
 }
 
 .board {
-	background-color: darkblue;
+	background-color: none;
+	border: none;
+	outline:none;
+	border-spacing: 0px;
+	padding:4px;
 }
 
 .board tr {
-	background-color: cornflowerblue;
+	background-color: none;
 	display: table-row;
 	padding: 0;
 	/*width: 3em;
@@ -18,25 +25,26 @@ body, table {
 }
 
 .board td {
-	width: 5em;
-	height: 5em;
+	width: 6em;
+	height: 6em;
 	cursor: pointer;
 
 }
 
 .ex{
-	background: #fff url(../images/ex.png);
+	background:  url(../images/ex.png);
 	background-size: contain;
 }
 
 .oh {
-	background: #111 url(../images/oh.png);
+	background: slategray url(../images/oh.png) center no-repeat;
 	background-size: contain;
 
 }
 
 #side-ex, #side-oh {
-	padding: 3%;
+	padding: 5%;
+
 
 }
 

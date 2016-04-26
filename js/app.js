@@ -56,7 +56,7 @@ function boom() {
 }
 
 function boomEffect(){
-  $('#content').effect({
+  $('.board').effect({
           easing: "swing",
           times: 2,
           distance: 50,
@@ -70,7 +70,7 @@ function boomEffect(){
           times: 7,
           distance: 4,
           direction: 'up',
-          duration: 400
+          duration: 400,
         }).effect({
           effect: "shake",
           times: 10,
@@ -80,6 +80,7 @@ function boomEffect(){
           effect: "shake",
           times: 10,
           distance: 30,
+          duration: 1000,
           direction: 'left'
         }).effect({
           effect: "shake",
@@ -90,6 +91,7 @@ function boomEffect(){
           effect: "shake",
           times: 10,
           distance: 50,
+          duration: 1000,
           direction: 'down'
         }).effect({
           effect: "shake",
@@ -100,6 +102,7 @@ function boomEffect(){
           effect: "shake",
           times: 5,
           distance: 70,
+          duration: 700,
           direction: 'right'
         }).effect({
           effect: "shake",
@@ -107,15 +110,10 @@ function boomEffect(){
           distance: 4,
           direction: 'up',
           duration: 400
-        }).effect({
-          effect: "bounce",
-          times: 7,
-          distance: 4,
-          direction: 'right',
-          duration: 400
         }).toggle({
-          effect: "blind",
-          direction: "left",
+          effect: "drop",
+          direction: "down",
+          duration: 900
 
         });
       }
@@ -129,9 +127,9 @@ function winOh (){
       text: "Play Again!",
       click: function(){
         $('.board tr td').removeClass('ex').removeClass('oh');
-        $('#content').toggle({
+        $('.board').toggle({
           effect: "blind",
-          direction: "left",
+          direction: "down",
         });
         $(this).dialog("close");
         
@@ -152,7 +150,7 @@ function winEx () {
     {
       text: "Play Again!",
       click: function(){
-        $('#content').toggle({
+        $('.board').toggle({
           effect: "blind",
           direction: "left",
         });
