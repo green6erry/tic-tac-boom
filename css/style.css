@@ -5,6 +5,7 @@ body, table {
 	outline: 0px;
 	border: 0px;
 	border-spacing: 0px;
+	font-family: 'Raleway', sans-serif;
 	/*outline: 1px green dotted;*/
 }
 
@@ -32,7 +33,7 @@ body, table {
 }
 
 .ex{
-	background:  url(../images/ex.png);
+	background:  url(../images/ex.png) center no-repeat;
 	background-size: contain;
 }
 
@@ -43,13 +44,16 @@ body, table {
 }
 
 #side-ex, #side-oh {
-	padding: 5%;
-
+	padding: .7em;
+	overflow: auto;
 
 }
+#side-oh {text-align: right}
+#side-ex {text-align: left}
 
 .no-close .ui-dialog-titlebar-close {
   display: none;
+  text-align: center;
 }
 
 /*board cell borders*/
