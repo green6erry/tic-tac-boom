@@ -5,12 +5,12 @@
 $(function(){
 
 function turnEx(){
-  $('#side-ex').css('background-color', "olive");
+  $('#side-ex').css('background-color', "lightgray");
   $('#side-oh').css('background-color', "white");
 }
 
 function turnOh(){
-  $('#side-oh').css('background-color', "olive");
+  $('#side-oh').css('background-color', "lightgray");
   $('#side-ex').css('background-color', "white");
 }
 

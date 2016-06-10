@@ -38,8 +38,8 @@ body, table {
 }
 
 .oh {
-	background: slategray url(../images/oh.png) center no-repeat;
-	background-size: contain;
+	background: slategray url(../images/oh.jpeg) center no-repeat;
+	background-size: 101%;
 
 }
 
