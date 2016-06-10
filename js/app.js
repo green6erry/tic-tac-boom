@@ -65,14 +65,14 @@ function cartoonSplode(){
           top: (window.innerHeight * Math.random() * 1.2) - 200,
           left: (window.innerWidth * Math.random() * 1.2) - 200
         });
-      // svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+      svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
       
       svg.innerHTML = callouts[~~(Math.random()* callouts.length)].innerHTML;
       
       document.body.appendChild(svg);
       console.log(svg);
         
-      }, i * 100);
+      }, i * 120);
     
     }
   
