@@ -46,7 +46,48 @@ var scoreOh = 0;
 var clicks = 0;
  //attribute class??
 
+function cartoonSplode(){
 
+  var callout = function(){
+    $('.callout').remove();
+    var callouts = $('.comic-callout');
+
+    for(var i = 0; i <30; i++){
+      setTimeout(function(){
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute('viewBox', '0 0 500 500');
+        svg.setAttribute('width', window.innerWidth * 0.85);
+        svg.setAttribute('height', window.innerWidth * 0.85);
+        svg.setAttribute('class', 'animated bounceIn callout');
+        $(svg).css({
+          position: 'fixed',
+          class: 'action',
+          top: (window.innerHeight * Math.random() * 1.2) - 200,
+          left: (window.innerWidth * Math.random() * 1.2) - 200
+        });
+      // svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+      
+      svg.innerHTML = callouts[~~(Math.random()* callouts.length)].innerHTML;
+      
+      document.body.appendChild(svg);
+      console.log(svg);
+        
+      }, i * 100);
+    
+    }
+  
+ setTimeout(function(){
+  console.log('end?');
+    $('body').on('click', function(){
+      $('.callout').remove();
+    }).appendTo($('body'));
+  }, 4000); 
+  
+}
+
+callout();
+
+}
 
 
 function boom() {
@@ -120,12 +161,16 @@ function boomEffect(){
 
 function winOh (){
     boomEffect();
+    cartoonSplode();
+
    $( ".dialog[name='oh-win']" ).dialog({
     autoOpen: true,
     buttons: [
     {
       text: "Play Again!",
       click: function(){
+        $('.callout').remove();
+
         $('.board tr td').removeClass('ex').removeClass('oh');
         $('.board').toggle({
           effect: "blind",
@@ -144,12 +189,14 @@ function winOh (){
 
 function winEx () {
     boomEffect();
+    cartoonSplode();
     $( ".dialog[name='ex-win']" ).dialog({
     autoOpen: true,
     buttons: [
     {
       text: "Play Again!",
       click: function(){
+        $('#splosion g').hide();
         $('.board').toggle({
           effect: "blind",
           direction: "left",
@@ -214,7 +261,6 @@ function winEx () {
   
 //O's Winning combos 
     if (1>2) {
-    console.log('contorl');
     } else if(tLeft_Oh && tMid_Oh && tRight_Oh){
        winOh();
 
@@ -243,7 +289,6 @@ function winEx () {
 //X's Winning Combos
  
   else if(tLeft_Ex && tMid_Ex && tRight_Ex){
-     console.log('hey');
      winEx();
 
   } else if (cLeft_Ex && cMid_Ex && cRight_Ex){
